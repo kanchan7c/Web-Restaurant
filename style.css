@@ -1,0 +1,325 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-primary : rgba(0, 255, 255, 0.904);
+    --clr-secondary: rgba(255, 99, 71, 0.884);
+    --clr-background: rgba(243, 11, 11, 0.74);
+    --clr-gradient: linear-gradient(354deg, rgba(16,236,213,0.8273026315789473) 41%, rgba(13,19,222,1) 100%);
+    --font-weight-light: 400;
+    --font-weight-bold: 600;
+    --font-weight-bolder: 900;
+    --fs-small: 0.5em;
+    --fs-medium: 1.2em;
+    --fs-large: 3em;
+    --fs-xl: 4em;
+    --font-family-abril: 'Abril Fatface', cursive; 
+    --font-family-roboto: 'Roboto', sans-serif;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+/* .shadowBox, .tagLine {
+    position: relative;
+}
+
+.button::after{
+    content: " < ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--fs-large);
+    color: white;
+    z-index: 99;
+    width: 100%;
+    height: 2em;
+} */
+/* ::::::::::::::::::::
+Header and Nav section
+:::::::::::::::::::: */
+
+header logo {
+    display: inline-block;
+    position: fixed;
+}
+header img {
+    margin-top: 0.5em;
+    margin-left: 4em;
+    width: 15vw;
+}
+
+.menuOpen{
+    position: absolute;
+    display: block;
+    color: white;
+    font-size: 2em;
+    right: 2rem;
+    top: 1em;
+    cursor: pointer;
+}
+.menuClose {
+    display: block;
+    color: white;
+    font-size: 3em;
+    right: 2rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+header {
+    background-image: linear-gradient(to right, rgb(8 7 7), rgb(223 102 15 / 76%));
+    height: 18vh;
+}
+
+header nav {
+    position: relative;
+    display: inline-block;
+    display: none;
+    top: 6.8vw;
+    z-index: 999;
+    background-image: linear-gradient(to right, rgb(223 102 15 / 76%), rgb(8 7 7));
+}
+
+header .navLinks{
+list-style: none;
+margin-top: 0 2em 0 85vw;
+margin-left: 85vw;
+padding-bottom: 0.5em;
+padding-bottom: 2em;
+
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: var(--fs-medium);
+    font-weight: var(--font-weight-light);
+    text-transform: uppercase;
+    padding: 0.2em 0.5em;
+    display: inline-block;
+    font-family: var(--font-family-roboto);
+}
+header a:hover {
+    color: black;
+    background-color: var(--clr-secondary);
+    border-radius: 100vh;
+}
+
+@media (min-width: 55rem) {
+    header .menuOpen,
+    header .menuClose{
+        display: none; 
+        font-size: 3em;
+        
+    }
+
+    header .navbar {
+        display: block;
+        margin: -5rem 2rem 0 50%;
+        background: transparent;
+        top: 2vh;
+    }   
+    header .navItems {
+        display: flex;
+        flex-wrap: wrap;
+    }
+ 
+    header .navLinks{
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        background-size: cover;
+    }
+}
+
+/* ::::::::::::::::::::
+Section 2 here
+:::::::::::::::::::: */
+
+section .container2{
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(255,255,255,0);
+    background: url("/Restaurant/Images/bg1jpg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: left;
+}
+
+section .container2::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    top: 5.5;
+    left: 0;
+    z-index: 0; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.545), rgba(9, 12, 238, 0.1));
+}
+
+section .container2 .tagLine {
+    width: 45vw;
+    height: 60vh;
+    margin: 8em 10em;
+    line-height: 2em;
+    z-index: 2;
+}
+.container2 h3{
+    font-size: var(--fs-xl);
+    line-height: 1em;
+    font-family: var(--font-family-abril);
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.966);
+    margin-bottom: 0.8em;
+} 
+.container2 p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    font-family: var(--font-family-roboto);
+    color: rgba(194, 187, 187, 0.925);
+}
+.container input, .buttonClass {
+    font-size: var(--fs-medium);
+    background-color: var(--clr-secondary);
+    color: white;
+    padding: 1em 1.5em;
+    border: 0;
+    border-radius: 0.2em;
+    margin: 0.5em 0;
+    cursor: pointer;
+    font-family: var(--font-family-roboto);
+}
+
+@media (max-width: 55em) {
+    section .container2 {
+        background: transparent;
+        height: 50vh;
+        place-items: center;
+    }
+
+    section .container2::before {
+        background: transparent;
+        height: 50vh;
+    }
+
+    section .container2 .tagLine {
+        width: 80vw;
+        height: 45vh;
+        margin: 6em auto;
+        line-height: 1em;
+        z-index: 2;
+    }
+
+    .container2 h3{
+        font-size: var(--fs-large);
+        line-height: 1em;
+        font-family: var(--font-family-abril);
+        color: black;
+    } 
+
+    .container input {
+        font-size: var(--fs-medium);
+        background-color: var(--clr-secondary);
+        color: white;
+        padding: 0.5em 1em;
+        border: 0;
+        border-radius: 0.2em;
+        margin: 0.5em 0;
+        cursor: pointer;
+        font-family: var(--font-family-roboto);
+    }
+    .container2 p {
+        line-height: 1.4em;
+        margin-top: 1em;
+        color: black;
+    }
+}
+
+/* ::::::::::::::::::::
+Section 3 here
+:::::::::::::::::::: */
+
+.container3 {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 5em 10em;
+}
+
+.container3 .imageDiv {
+    flex-basis: 50%;
+}
+
+.container3 img{
+    height: 90vh;
+}
+
+.container3 .contentDiv {
+    margin: 5em;
+}
+
+.container3 .contentDiv .shadowBox {
+    height: 30%;
+    width: 20%;
+    /* position: fixed; */
+    background-color: rgba(128, 128, 128, 0.075);
+    box-shadow: 4px rgb(87, 86, 86);
+    border-radius: 0.5em;
+    position: absolute;
+}
+
+.container3 .contentDiv h1{
+    font-size: var(--fs-xl);
+    line-height: 1em;
+    font-family: var(--font-family-abril);
+    letter-spacing: 2px;
+    color: rgba(8, 8, 8, 0.884);
+    margin-bottom: 0.8em;
+}
+
+.container3 .contentDiv p{
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    color: rgba(10, 10, 10, 0.7);
+    font-family: var(--font-family-roboto);
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.1em;
+    word-spacing: 0.3em;
+}
+
+@media (max-width: 55em) {
+
+    .container3 {
+        flex-direction: column;
+        width: 95%;
+        margin: 2em auto 6em auto; 
+    }
+
+    .container3 img{
+        height: 70vh;
+        margin-top: 4em;
+    }
+    .container3 .contentDiv .shadowBox {
+        display: none;
+    }
+
+}
+
+
